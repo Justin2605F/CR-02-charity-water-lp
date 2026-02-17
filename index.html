@@ -1,212 +1,163 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fill the Tank! — charity: water</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="screen">
+:root{
+  --cw-yellow: #FFC907;
+  --ink: #102A43;
+  --cream: #F5EFE6;
+  --sky: #BFE8FF;
+  --ocean: #2F9BFF;
+  --sand: #F2D7A1;
+}
 
-    <!-- Top Bar -->
-    <header class="topbar">
-      <!-- Logo -->
-      <img src="https://upleaf.com/wp-content/uploads/2014/01/mass-images-charity_water_logo-110502-large.jpg" alt="charity: water" class="logo"
-      >
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0b1220;
+  color: var(--ink);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
 
-      <nav class="top-actions">
-        <button class="chip" id="btnHow">How to Play</button>
-        <a class="chip chip--yellow" href="https://www.charitywater.org" target="_blank" rel="noopener">
-          Give
-        </a>
-      </nav>
-    </header>
+.landing{
+  width: min(900px, 96vw);
+  aspect-ratio: 3 / 4;
+  background: var(--cream);
+  border: 4px solid rgba(16,42,67,0.25);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
 
-    <!-- Scene / Island -->
-    <section class="scene">
-      <!-- Decorative elements: Palm trees with leaves -->
-      <!-- Left palm tree -->
-      <svg class="palm palm--left" viewBox="0 0 120 750" aria-hidden="true">
-        <!-- Detailed curved trunk with texture -->
-        <path d="M 50 350 Q 48 420 50 500 Q 52 570 50 650" stroke="#8B5A2B" stroke-width="28" fill="none" stroke-linecap="round"/>
-        <path d="M 50 350 Q 52 420 50 500 Q 48 570 50 650" stroke="#704214" stroke-width="24" fill="none" stroke-linecap="round"/>
-        
-        <!-- Trunk rings/segments -->
-        <circle cx="50" cy="380" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="420" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="460" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="500" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="540" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="580" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="620" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        
-        <!-- Large radiating palm fronds (leaves) with veins -->
-        <!-- Top center frond -->
-        <ellipse cx="50" cy="180" rx="18" ry="100" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(0 50 180)"/>
-        <line x1="50" y1="180" x2="50" y2="100" stroke="#1a5c2e" stroke-width="1" opacity="0.6"/>
-        
-        <!-- Upper left fronds -->
-        <ellipse cx="25" cy="220" rx="16" ry="85" fill="#32CD32" stroke="#228B22" stroke-width="1.5" transform="rotate(-45 25 220)"/>
-        <ellipse cx="15" cy="260" rx="14" ry="80" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(-60 15 260)"/>
-        
-        <!-- Upper right fronds -->
-        <ellipse cx="75" cy="220" rx="16" ry="85" fill="#32CD32" stroke="#228B22" stroke-width="1.5" transform="rotate(45 75 220)"/>
-        <ellipse cx="85" cy="260" rx="14" ry="80" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(60 85 260)"/>
-        
-        <!-- Middle left fronds -->
-        <ellipse cx="20" cy="300" rx="13" ry="75" fill="#228B22" stroke="#1a6b1a" stroke-width="1.5" transform="rotate(-70 20 300)"/>
-        <ellipse cx="10" cy="340" rx="12" ry="70" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(-75 10 340)"/>
-        
-        <!-- Middle right fronds -->
-        <ellipse cx="80" cy="300" rx="13" ry="75" fill="#228B22" stroke="#1a6b1a" stroke-width="1.5" transform="rotate(70 80 300)"/>
-        <ellipse cx="90" cy="340" rx="12" ry="70" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(75 90 340)"/>
-        
-        <!-- Lower fronds (slightly smaller) -->
-        <ellipse cx="30" cy="360" rx="11" ry="65" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(-50 30 360)"/>
-        <ellipse cx="70" cy="360" rx="11" ry="65" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(50 70 360)"/>
-        
-        <!-- Coconuts cluster (yellow/golden) -->
-        <circle cx="48" cy="320" r="10" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
-        <circle cx="52" cy="320" r="10" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
-        <circle cx="50" cy="335" r="9" fill="#FFA500" stroke="#FF8C00" stroke-width="2"/>
-        <circle cx="45" cy="345" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
-        <circle cx="55" cy="345" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
-        
-        <!-- Grass/ shoots at base -->
-        <path d="M 35 690 Q 33 670 30 695" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 45 695 Q 43 675 40 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 55 695 Q 53 675 50 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 65 695 Q 63 675 60 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 75 690 Q 73 670 70 695" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
-      
-      <!-- Right palm tree -->
-      <svg class="palm palm--right" viewBox="0 0 120 750" aria-hidden="true">
-        <!-- Detailed curved trunk with texture -->
-        <path d="M 50 350 Q 48 420 50 500 Q 52 570 50 650" stroke="#8B5A2B" stroke-width="28" fill="none" stroke-linecap="round"/>
-        <path d="M 50 350 Q 52 420 50 500 Q 48 570 50 650" stroke="#704214" stroke-width="24" fill="none" stroke-linecap="round"/>
-        
-        <!-- Trunk rings/segments -->
-        <circle cx="50" cy="380" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="420" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="460" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="500" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="540" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="580" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        <circle cx="50" cy="620" r="14" fill="none" stroke="#654321" stroke-width="1"/>
-        
-        <!-- Large radiating palm fronds (leaves) with veins -->
-        <!-- Top center frond -->
-        <ellipse cx="50" cy="180" rx="18" ry="100" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(0 50 180)"/>
-        <line x1="50" y1="180" x2="50" y2="100" stroke="#1a5c2e" stroke-width="1" opacity="0.6"/>
-        
-        <!-- Upper left fronds -->
-        <ellipse cx="25" cy="220" rx="16" ry="85" fill="#32CD32" stroke="#228B22" stroke-width="1.5" transform="rotate(-45 25 220)"/>
-        <ellipse cx="15" cy="260" rx="14" ry="80" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(-60 15 260)"/>
-        
-        <!-- Upper right fronds -->
-        <ellipse cx="75" cy="220" rx="16" ry="85" fill="#32CD32" stroke="#228B22" stroke-width="1.5" transform="rotate(45 75 220)"/>
-        <ellipse cx="85" cy="260" rx="14" ry="80" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(60 85 260)"/>
-        
-        <!-- Middle left fronds -->
-        <ellipse cx="20" cy="300" rx="13" ry="75" fill="#228B22" stroke="#1a6b1a" stroke-width="1.5" transform="rotate(-70 20 300)"/>
-        <ellipse cx="10" cy="340" rx="12" ry="70" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(-75 10 340)"/>
-        
-        <!-- Middle right fronds -->
-        <ellipse cx="80" cy="300" rx="13" ry="75" fill="#228B22" stroke="#1a6b1a" stroke-width="1.5" transform="rotate(70 80 300)"/>
-        <ellipse cx="90" cy="340" rx="12" ry="70" fill="#2E8B57" stroke="#1a5c2e" stroke-width="1.5" transform="rotate(75 90 340)"/>
-        
-        <!-- Lower fronds (slightly smaller) -->
-        <ellipse cx="30" cy="360" rx="11" ry="65" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(-50 30 360)"/>
-        <ellipse cx="70" cy="360" rx="11" ry="65" fill="#3CB371" stroke="#228B22" stroke-width="1.5" transform="rotate(50 70 360)"/>
-        
-        <!-- Coconuts cluster (yellow/golden) -->
-        <circle cx="48" cy="320" r="10" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
-        <circle cx="52" cy="320" r="10" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
-        <circle cx="50" cy="335" r="9" fill="#FFA500" stroke="#FF8C00" stroke-width="2"/>
-        <circle cx="45" cy="345" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
-        <circle cx="55" cy="345" r="8" fill="#FFD700" stroke="#FFA500" stroke-width="1.5"/>
-        
-        <!-- Grass/ shoots at base -->
-        <path d="M 35 690 Q 33 670 30 695" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 45 695 Q 43 675 40 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 55 695 Q 53 675 50 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 65 695 Q 63 675 60 700" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 75 690 Q 73 670 70 695" stroke="#2E8B57" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
-      
-      <!-- Sun circle on the horizon -->
-      <div class="sun" aria-hidden="true"></div>
+/* Top */
+.landing-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  position: relative;
+  z-index: 2;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(16,42,67,0.18);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+.brand-logo{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.brand-text{
+  font-weight: 900;
+  letter-spacing: 0.4px;
+}
 
-      <!-- Title -->
-      <div class="title-wrap">
-        <h1 class="title">Fill the<br/>Tank!</h1>
-        <p class="subtitle">Pump clean water before time runs out.</p>
-      </div>
+/* Hero */
+.hero{
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px 18px;
+  gap: 12px;
+}
+.title{
+  margin: 0;
+  font-size: clamp(52px, 7vw, 92px);
+  line-height: 0.92;
+  text-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+.subtitle{
+  margin: 0;
+  font-size: clamp(16px, 2.2vw, 20px);
+  opacity: 0.9;
+  max-width: 42ch;
+}
 
-      <!-- Big Start CTA -->
-      <div class="cta-wrap">
-        <a href="game.html" class="start">START</a>
-      </div>
+.actions{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
 
-      <!-- Bottom info row -->
-      <footer class="bottombar">
-        <a class="learn" href="https://www.charitywater.org" target="_blank" rel="noopener">
-          learn more at <span>charitywater.org</span>
-        </a>
+.start-btn{
+  text-decoration: none;
+  background: rgba(255,255,255,0.92);
+  border: 2px solid rgba(16,42,67,0.25);
+  border-radius: 18px;
+  padding: 18px 26px;
+  font-size: 26px;
+  font-weight: 1000;
+  letter-spacing: 3px;
+  color: var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.start-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(0,0,0,0.20);
+}
 
-        <div class="score">
-          <div class="score__label">High Score</div>
-          <div class="score__value"><span id="hiScore">0</span> <span class="muted">liters</span></div>
-        </div>
-      </footer>
+.chip{
+  text-decoration: none;
+  background: var(--cw-yellow);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+.chip-outline{
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(16,42,67,0.20);
+}
 
-      <!-- Water / Sand bands -->
-      <div class="bands" aria-hidden="true">
-        <div class="band band--sky"></div>
-        <div class="band band--ocean"></div>
-        <div class="band band--waves"></div>
-        <div class="band band--sand"></div>
-      </div>
-    </section>
+.tiny{
+  margin: 8px 0 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
 
-    <!-- Simple modal (How to Play) -->
-    <section class="modal" id="modal" aria-hidden="true">
-      <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <h2 id="modalTitle">How to Play</h2>
-        <ol>
-          <li>Watch the water color.</li>
-          <li><b>Blue = clean</b> → pump to add liters.</li>
-          <li><b>Brown = dirty</b> → don't pump or you lose progress.</li>
-          <li>Try to fill the tank before time runs out!</li>
-        </ol>
-        <button class="chip chip--outline" id="btnClose">Close</button>
-      </div>
-    </section>
+/* Bottom */
+.landing-bottom{
+  position: relative;
+  z-index: 2;
+  padding: 14px;
+  text-align: center;
+}
+.landing-bottom a{
+  color: rgba(16,42,67,0.85);
+  text-decoration: none;
+}
+.landing-bottom b{ text-decoration: underline; }
 
-  </main>
-
-  <script>
-    // Beginner-level JS for the "How to Play" modal + saving high score
-    const modal = document.getElementById("modal");
-    const btnHow = document.getElementById("btnHow");
-    const btnClose = document.getElementById("btnClose");
-
-    btnHow.addEventListener("click", () => {
-      modal.classList.add("modal--open");
-      modal.setAttribute("aria-hidden", "false");
-    });
-
-    btnClose.addEventListener("click", () => {
-      modal.classList.remove("modal--open");
-      modal.setAttribute("aria-hidden", "true");
-    });
-
-    // (Optional) load a saved high score
-    const hiScoreEl = document.getElementById("hiScore");
-    const saved = localStorage.getItem("cloud_pasta_hi"); // rename later if you want
-    if (saved) hiScoreEl.textContent = saved;
-  </script>
-</body>
-</html>
+/* Background bands */
+.bands{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.band{ position: absolute; left: 0; width: 100%; }
+.band.sky{
+  top: 0; height: 60%;
+  background: linear-gradient(180deg, #D7F2FF, var(--sky));
+}
+.band.ocean{
+  top: 60%; height: 18%;
+  background: linear-gradient(180deg, var(--ocean), #0F5AA8);
+}
+.band.sand{
+  bottom: 0; height: 22%;
+  background: linear-gradient(180deg, #F7E7BE, var(--sand));
+}
